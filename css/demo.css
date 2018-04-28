@@ -32,7 +32,7 @@ html { height: 100%; }
 }
 
 body {
-    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-family: 'Source Sans Pro', Calibri, Arial, sans-serif;
     background: #fff;
     font-weight: 300;
     font-size: 15px;
@@ -76,9 +76,19 @@ a {
 	margin: 0 auto;
 }
 
+.content-wrapper h1{
+    font-size: 3em;
+}
+
+.content-wrapper h2{
+    font-size: 32px;
+    padding-top: 30px;
+}
+
 .content-wrapper p{
 	padding-top: 30px;
 	line-height: 26px;
+    font-size: 16px;
 }
 
 .container > header h1 {

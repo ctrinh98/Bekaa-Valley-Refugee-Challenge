@@ -12,7 +12,14 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/custom.css" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
 		<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+        <style>
+           #map {
+               height: 400px;
+               width: 100%;
+           }
+        </style>
 		<noscript>
 			<link rel="stylesheet" type="text/css" href="css/styleNoJS.css" />
 		</noscript>
@@ -23,7 +30,7 @@
 		
             <header class="clearfix">
 			
-				<h1>Bekaa Valley Refugee <span>Team 1</span></h1>
+				<h1>Bekaa Valley Refugee Challenge<span>Team 1</span></h1>
 				
 				<nav class="codrops-demos">
 					<a class="current-demo" href="index.html">Home</a>
@@ -41,7 +48,9 @@
 						<div class="sl-slide-inner">
 							<div class="bg-img bg-img-1"></div>
 							<h2>Project Overview</h2>
-							<blockquote><p>summary of project name, location, partners, core objectives, and activities</p><cite>Elizabeth Champion</cite></blockquote>
+							<blockquote><p>summary of project name, location, partners, core objectives, and activities</p></blockquote>
+                            <h3>Context and Needs</h3>
+                            <blockquote><p>country context, protection needs and risk, and process of assessment</p></blockquote>
 						</div>
 					</div>
 					
@@ -89,8 +98,23 @@
 			</div><!-- /slider-wrapper -->
 
 			<div class="content-wrapper">
-				<h2>About this slider</h2>
-				<p>The Slit Slider is a slideshow with a twist: the idea is to slice open the current slide when navigating to the next or previous one. Using jQuery and CSS animations we can create unique slide transitions for the content elements. </p>
+                <div id="map"></div>
+                    <script>
+                      function initMap() {
+                        var uluru = {lat: 34.010444, lng: 36.145194};
+                        var map = new google.maps.Map(document.getElementById('map'), {
+                          zoom: 8,
+                          center: uluru
+                        });
+                        var marker = new google.maps.Marker({
+                          position: uluru,
+                          map: map
+                        });
+                      }
+                    </script>
+				<h2>About this challenge</h2>
+				<p>The Syrian refugee population is disproportionately composed of women, many of whom have been widowed or separated from their families and are often struggling to support children. The United Nations High Commission on Refugees (UNHCR) has called attention to the plight of hundreds of thousands of Syrian refugee women who are not only facing difficult living conditions but also sexual and gender basewd violence (SGBV).</p>
+                <p>Develop a plan to address SGBV in Cesar 1, an informal camp outside Zahle in the Bekaa Valley.</p>
 			</div>
 
         </div>
@@ -164,5 +188,8 @@
 			
 			});
 		</script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4aoUYJDMxDfiMOOz7iqoeslQ4E9z9FHQ&callback=initMap">
+        </script>
 	</body>
 </html>
